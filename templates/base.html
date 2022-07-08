@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}{% endblock %} &ndash; Por Stanley Oliveira & Pure</title>
+    <link rel="stylesheet" href="/static/css/pure-min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/imagens/favicon.ico">
+</head>
+<body>
+
+<div id="layout">
+    <a href="#menu" id="menuLink" class="menu-link">
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#company">Nintendo Shop</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Inicio</a></li>
+                <li class="pure-menu-item"><a href="/sobre" class="pure-menu-link">Sobre</a></li>
+                <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                    <a href="/produtos" class="pure-menu-link">Produtos</a>
+                </li>
+                <li class="pure-menu-item"><a href="/avaliacoes" class="pure-menu-link">Avaliações</a></li>
+                <li class="pure-menu-item"><a href="/contato" class="pure-menu-link">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+    {% block conteudo %}
+    {% endblock %}
+  {% block footer %}
+  <br />
+  <footer class="footer"><p>
+    Feito por Stanley Oliveira <img title="Brazil" alt="Brazil" class="emoji" src="https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f7.svg" width="16" height="16" /> &copy; 2022.<br />
+      Este site não tem nenhum vinculo com a marca Nintendo.</p>
+  </footer>
+  {% endblock %}
+          </div>
+    </div>
+</div>
+<script src="/static/js/ui.js"></script>
+</body>
+</html>

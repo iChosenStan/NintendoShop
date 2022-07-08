@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block titulo %}Pagamento - Pro Controle{% endblock %}
+{% block conteudo %}
+	<div id="main">
+        <div class="header">
+            <h1>Pagamento</h1>
+            <h2>Efetuar o pagamento do Pro Controle</h2>
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead">Controle Pro Cinza - Nintendo Switch (nacional)</h2>
+            {% if promocao %}
+                {% set preco =  450 * ((100-desconto)/100) %}
+                <h2 class="content-price">R${{preco | int}},00</h3>
+            {% else %}
+              <h2 class="content-price">R$450,00</h3>
+            {% endif %}
+            <p>
+              <ul class="a-unordered-list a-vertical a-spacing-mini">
+                <li><span class="a-list-item"> Controle para Nintendo Switch sem Fio Pro Controller Aumente o nível das suas sessões de jogo com o Controle Pro Controller. Inclui controle de movimento, vibração HD, funcionalidade amiibo pré-instalada e muito mais. Na cor cinza e sem fio, esse controle irá elevar seu jogo e facilitará suas ações no console. O Pro Controller vem para te dar mais uma opção de como jogar em seu Switch e te deixar a vontade para jogar como quiser.</span></li>
+                <li><span class="a-list-item"> Conectividade sem fio</span></li>
+                <li><span class="a-list-item"> Cabo de carregamento (USB-C a USB-A)</span></li>
+                <li><span class="a-list-item"> Atenção: amiibo vendido separadamente.</span></li>
+
+            <div class="pure-g">
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/procontrole1.jpg" alt="Switch OLED">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/procontrole2.jpg" alt="Switch OLED">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/procontrole3.jpg" alt="Switch OLED com Dock">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/procontrole4.jpg" alt="Leon surpreso com seu Switch OLED">
+                </div>
+            </div>
+          
+            <div class="pure-g">
+                    <a href="/obrigado"><img class="pure-img-responsive" src="/static/imagens/botao_pagar.png" alt="Comprar agora"></a>
+                </div>
+{% endblock %}

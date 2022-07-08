@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block titulo %}Pagamento Nintendo Switch OLED{% endblock %}
+{% block conteudo %}
+	<div id="main">
+        <div class="header">
+            <h1>Pagamento</h1>
+            <h2>Efetuar o pagamento do Nintendo Switch OLED</h2>
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead">Console Nintendo Switch OLED - Branco</h2>
+            {% if promocao %}
+                {% set preco =  3500 * ((100-desconto)/100) %}
+                <h2 class="content-price">R${{preco | int}},00</h3>
+            {% else %}
+              <h2 class="content-price">R$3500,00</h3>
+            {% endif %}
+            <p>
+              <ul class="a-unordered-list a-vertical a-spacing-mini">
+                <li><span class="a-list-item"> Console Nintendo Switch modelo OLED: Joy-Cons e Dock na cor branca;  </span></li>
+                <li><span class="a-list-item"> Tela OLED de 7";  </span></li>
+                <li><span class="a-list-item"> Memória interna de 64GB;  </span></li>
+                <li><span class="a-list-item"> Dock com entrada LAN para internet a cabo.  </span></li>
+                <li><span class="a-list-item"> PRODUTO IMPORTADO. A versão poderá variar de acordo com o estoque disponível no dia da aprovação da compra. Consulte seu vendedor. IMPORTANTE: Produto de região livre, portanto, independente da versão do console, poderão ser utilizados jogos físicos e digitais de qualquer região assim como contas online de qualquer país. A configuração do console poderá ser feita em diversos idiomas, incluindo português brasileiro.</span></li>
+              </ul>
+            </p>
+
+            <div class="pure-g">
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/switch1.jpg" alt="Switch OLED">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/switch2.jpg" alt="Switch OLED">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/switch3.jpg" alt="Switch OLED com Dock">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="/static/imagens/switch4.jpg" alt="Leon surpreso com seu Switch OLED">
+                </div>
+            </div>
+          
+            <div class="pure-g">
+                    <a href="/obrigado"><img class="pure-img-responsive" src="/static/imagens/botao_pagar.png" alt="Comprar agora"></a>
+                </div>
+{% endblock %}

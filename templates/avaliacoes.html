@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block titulo %} Avaliações {% endblock %}
+{% block conteudo %}
+<div id="main">
+        <div class="header">
+          <div class="content">
+             {% for a in clientes %}
+              <h2>Avaliação de {{a.nome}} - Nota: 
+                {% for e in range(a.nota) %}
+                  <img img class="pure-img-responsive" src="/static/imagens/estrela.png">
+                {% endfor %}</h2>
+              <p>{{a.comentario}}</p>
+            <br /><br /><br />
+          {% endfor %}
+{% endblock %}
