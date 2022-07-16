@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, redirect, json, request
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "@my-replit-secret"
 
 @app.route('/')
 def index():
@@ -9,6 +10,10 @@ def index():
 @app.route('/sobre')
 def sobre():
   return render_template('sobre.html')
+
+@app.route('/login')
+def login():
+  return render_template('login.html')
 
 @app.route('/produtos')
 def produtos():
