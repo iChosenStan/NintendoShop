@@ -49,7 +49,7 @@ def procontrole(desconto):
 
 @app.route('/avaliacoes')
 def avaliacoes():
-  clientes = [ {"nome": "Arlanda", "nota": 5, "comentario": "Loja muito boa, produto chegou muito rápido na minha casa!"},
+  clientes = [ {"nome": "Alana", "nota": 5, "comentario": "Loja muito boa, produto chegou muito rápido na minha casa!"},
               {"nome": "Pedro", "nota": 3, "comentario": "Produto muito bom, mas a loja demorou a postar meu produto, por isso dou 3 estrelas"},
               {"nome": "Alice", "nota": 5, "comentario": "Excelente!"},
               {"nome": "Bia", "nota": 4, "comentario": "Bom console, mas os jogos são caros"},
