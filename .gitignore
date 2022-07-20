@@ -1,0 +1,2 @@
+# Ignorar todos os arquivos e sub-pastas da pasta migrations/
+migrations/

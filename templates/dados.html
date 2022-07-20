@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block titulo %}Dados lido do JSON{% endblock %}
+{% block conteudo %}
+	<div id="main">
+        <div class="header">
+            <h1>Pagamento</h1>
+            <h2>Efetuar o pagamento do Pro Controle</h2>
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead">Produtos em JSON</h2>
+                <h2 class="content-price">R${{preco | int}},00</h3>
+              <ul class="a-unordered-list a-vertical a-spacing-mini">
+                <li><span class="a-list-item"> {% for d in dados %}
+                <div class="card" style="width: 18rem;">
+                      <img src="/static/{{d.imagem}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ d.sabor }} </h5>
+                        <p class="card-text"> P: R$ {{d.preco.p}}/ M: {{d.preco.m}}/ G: {{d.preco.g}}</p>
+                        <a href="#" class="btn btn-primary">Pedir</a>
+                      </div>
+                    </div>
+                {% endfor %}</span></li>
+                </div>
+{% endblock %}

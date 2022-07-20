@@ -1,0 +1,24 @@
+[
+   {
+      "id":1,
+      "sabor":"Frango com Catupiry",
+      "ingredientes":"frango, catupiry, molho de tomate",
+			"imagem": "imgs/catupiry.jpg",
+      "precos":{
+         "p":45,
+         "m":55,
+         "g":65
+      }
+   },
+   {
+      "id":2,
+      "sabor":"Sertaneja",
+      "ingredientes":"carne de sol, queijo coalho, molho de tomate",
+			"imagem": "imgs/sertaneja.jpg",
+      "precos":{
+         "p":50,
+         "m":60,
+         "g":70
+      }
+   }
+]

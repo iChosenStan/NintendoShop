@@ -1,7 +1,20 @@
-from flask import Flask, render_template, flash, redirect, json, request
+from flask import Flask, render_template
+import json
+from database import db
+from flask_migrate import Migrate
+from models import Usuario
 
 app = Flask(__name__)
+
 app.config['SECRET_KEY'] = "@my-replit-secret"
+
+#conexão com o banco de dados
+conexao = "sqlite:///meubanco.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = conexao
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
+migrate = Migrate(app, db)
 
 @app.route('/')
 def index():
@@ -57,5 +70,12 @@ def avaliacoes():
               {"nome": "Mário Mário", "nota": 2, "comentario": "Meu switch veio com defeito, acionei a garantia!"},
              ]
   return render_template('avaliacoes.html', clientes=clientes)
+  
+@app.route('/json')
+def jsondados():
+ arquivo = open("static/data/dados.json")
+ dados = json.load(arquivo)
+ print(dados)
+ return render_template('dados.html', dados=dados)
 
 app.run(host='0.0.0.0', port=81)
