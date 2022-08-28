@@ -97,14 +97,13 @@ def autenticar():
             flash('Login correto', 'alert-success')
         else:
             flash('Login inválido', 'alert-danger')
-
         if (senha == "senha123"):
-            flash('Senha correto', 'alert-success')
+            flash('Senha correta', 'alert-success')
         else:
             flash('Senha inválida', 'alert-danger')
-
+          
         return redirect('/login')
     else:
-        return "Bem vindo admin"
-  
+        return render_template('autenticado.html', usuario=login)
+      
 app.run(host='0.0.0.0', port=81)

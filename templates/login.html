@@ -1,40 +1,37 @@
 {% extends "base.html" %}
-
-{% block titulo %}
-Login
-{% endblock %}
-
+{% block titulo %}Autenticação {% endblock %}
 {% block conteudo %}
+<div id="main">
+        <div class="header">
+            <h1>Autenticação</h1>
+            <h2>Insira os dados para continuar!</h2>
+        </div>
 
-{% set mensagens = get_flashed_messages(with_categories=true) %}
-{% if mensagens %}
-  <ul> 
-    {% for c, m in mensagens %}
-      <li class='alert {{c}}'> {{m}} </li>
-    {% endfor %}
-  </ul>
-{% endif %}
+        <div class="content">
+        {% set mensagens = get_flashed_messages(with_categories=true) %}
+        {% if mensagens %}
+          <ul> 
+            {% for c, m in mensagens %}
+              <li class='alert {{c}}'> {{m}} </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <form action="/autenticar" method="post">
+          <div class="mb-3">
+            <label for="login" class="form-label">Login: </label>
+            <input type="text" class="form-control" name="login" id="login" placeholder="Digite seu usuário">
+          </div>
+          <div class="mb-3">
+            <label for="senha" class="form-label">Senha: </label>
+            <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+          </div>
+          <br />
+          <center><button type="submit">Entrar</button></center>
+        </form>
 
-
-<form action="/autenticar" method="post">
-  <div class="mb-3">
-    <label for="login" class="form-label">Login: </label>
-    <input type="text" class="form-control" name="login" id="login" placeholder="Digite seu usuário">
-  </div>
-  <div class="mb-3">
-    <label for="senha" class="form-label">Senha: </label>
-    <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
-  </div>
-  <button type="submit">Entrar</button>
-</form>
-
-{% set mensagens = get_flashed_messages(category_filter=['alert-success']) %}
-{% if mensagens %}
-  <ul> 
-    {% for c, m in mensagens %}
-      <li class='alert {{c}}'> {{m}} </li>
-    {% endfor %}
-  </ul>
-{% endif %}
-
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
 {% endblock %}
