@@ -1,10 +1,13 @@
 from flask import Flask, render_template
 import json
+from flask import flash, redirect, request
 from database import db
 from flask_migrate import Migrate
 from models import Usuario
+from usuarios import bp_usuarios
 
 app = Flask(__name__)
+app.register_blueprint(bp_usuarios, url_prefix='/usuarios')
 
 app.config['SECRET_KEY'] = "@my-replit-secret"
 
@@ -78,4 +81,30 @@ def jsondados():
  print(dados)
  return render_template('dados.html', dados=dados)
 
+@app.route("/teste_insert")
+def teste_insert():
+ u = Usuario("Stanley de Oliveira", "stanley.oliveira@escolar.ifrn.edu.br", "123456")
+ db.session.add(u)
+ db.session.commit()
+ return 'Dados inseridos com sucesso'
+
+@app.route('/autenticar', methods=['POST'])
+def autenticar():
+    login = request.form.get("login")
+    senha = request.form.get("senha")
+    if login != "admin" or senha != "senha123":
+        if (login == "admin"):
+            flash('Login correto', 'alert-success')
+        else:
+            flash('Login inválido', 'alert-danger')
+
+        if (senha == "senha123"):
+            flash('Senha correto', 'alert-success')
+        else:
+            flash('Senha inválida', 'alert-danger')
+
+        return redirect('/login')
+    else:
+        return "Bem vindo admin"
+  
 app.run(host='0.0.0.0', port=81)

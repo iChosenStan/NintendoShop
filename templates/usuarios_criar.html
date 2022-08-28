@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block titulo %}Criar usuário{% endblock %}
+{% block conteudo %}
+<div id="main">
+        <div class="header">
+            <h1>Usuários</h1>
+            <h2>Criar novo usuário</h2>
+        </div>
+
+        <div class="content">
+            <center><h2>Insira os dados do novo usuário!</h2></center>
+
+            <form method="post">
+              Nome: <input type="text" name="nome"><br>
+              E-mail: <input type="text" name="email"><br>
+              Senha: <input type="password" name="senha"><br>
+              Confirmar senha: <input type="password" name="csenha"><br>
+          
+              <input type="submit" value="Cadastrar">
+            </form>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+{% endblock %}

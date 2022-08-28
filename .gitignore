@@ -1,2 +1,4 @@
-# Ignorar todos os arquivos e sub-pastas da pasta migrations/
+# Ignorar todos os arquivos e sub-pastas da pasta migrations/ e __pycache__
 migrations/
+__pycache__/
+meubanco.db

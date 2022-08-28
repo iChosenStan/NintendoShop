@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block titulo %}Lista de usuário{% endblock %}
+{% block conteudo %}
+<div id="main">
+        <div class="header">
+            <h1>Usuários</h1>
+            <h2>Gerencie os usuários do banco de dados!</h2>
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead"><a href="{{url_for('usuarios.criar')}}">Cadastrar novo usuário</a></h2>
+
+          
+        <ul class="destaque">
+        {% for u in usuarios %}
+          <li onmouseover="destacar(this)" onmouseout="removerDestaque(this)"> 
+            <span class="a-list-item">{{u.nome}} - 
+            {{u.email}} - 
+            <a href="{{url_for('usuarios.apagar', id=u.id)}}"><img class="pure-img-responsive" src="/static/imagens/apagar.png" alt="Deletar usuário"></a>
+            </span>
+          </li>
+        {% endfor %}
+        </ul>
+
+          <br />
+          <br />
+          <br />
+          <br />
+{% endblock %}
